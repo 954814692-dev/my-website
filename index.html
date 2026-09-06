@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VORTEX Lubricants</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #111;
+            background: #fff;
+        }
+
+        /* ===== Navigation ===== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.96);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            font-weight: 300;
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #111;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #777;
+        }
+
+        /* ===== Hero ===== */
+
+        .hero {
+            min-height: 100vh;
+            padding: 160px 7% 80px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(
+                    110deg,
+                    #f2f2f2 0%,
+                    #ffffff 55%,
+                    #dcdcdc 100%
+                );
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-small {
+            font-size: 14px;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+            color: #666;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 8vw, 110px);
+            line-height: 0.9;
+            letter-spacing: -4px;
+            margin-bottom: 35px;
+        }
+
+        .hero p {
+            max-width: 550px;
+            color: #555;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 16px 35px;
+            background: #111;
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #444;
+        }
+
+        /* ===== Common Section ===== */
+
+        section {
+            padding: 120px 7%;
+        }
+
+        .section-title {
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .section-heading {
+            font-size: clamp(40px, 5vw, 70px);
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+
+        /* ===== About ===== */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #555;
+            line-height: 1.9;
+            font-size: 17px;
+        }
+
+        .about-box {
+            height: 420px;
+            background: #111;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+            font-weight: 800;
+            letter-spacing: 8px;
+        }
+
+        /* ===== Products ===== */
+
+        .products-section {
+            background: #f5f5f5;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 60px;
+        }
+
+        .product-card {
+            background: white;
+            padding: 45px 35px;
+            min-height: 300px;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .product-number {
+            font-size: 13px;
+            color: #999;
+            letter-spacing: 2px;
+            margin-bottom: 60px;
+        }
+
+        .product-card h3 {
+            font-size: 28px;
+            margin-bottom: 18px;
+        }
+
+        .product-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* ===== Technology ===== */
+
+        .technology {
+            background: #111;
+            color: white;
+        }
+
+        .technology .section-title {
+            color: #999;
+        }
+
+        .technology p {
+            max-width: 750px;
+            color: #aaa;
+            line-height: 1.9;
+            font-size: 18px;
+        }
+
+        /* ===== Contact ===== */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: clamp(45px, 6vw, 80px);
+            margin-bottom: 25px;
+        }
+
+        .contact p {
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* ===== Footer ===== */
+
+        footer {
+            background: #111;
+            color: #888;
+            padding: 30px 7%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+
+        /* ===== Mobile ===== */
+
+        @media (max-width: 768px) {
+
+            header {
+                padding: 0 5%;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 10px;
+            }
+
+            .hero {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .about-box {
+                height: 280px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <header>
+        <div class="logo">
+            VORTEX<span>®</span>
+        </div>
+
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#products">PRODUCTS</a>
+            <a href="#technology">TECHNOLOGY</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+    </header>
+
+
+    <!-- Hero -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="hero-small">
+                ADVANCED LUBRICATION TECHNOLOGY
+            </div>
+
+            <h1>
+                ENGINEERED<br>
+                TO PERFORM.
+            </h1>
+
+            <p>
+                High-performance lubricants engineered for
+                modern engines, industrial equipment and demanding
+                applications.
+            </p>
+
+            <a class="button" href="#products">
+                EXPLORE PRODUCTS
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section id="about">
+
+        <div class="about">
+
+            <div class="about-text">
+
+                <div class="section-title">
+                    ABOUT US
+                </div>
+
+                <h2 class="section-heading">
+                    MOVING<br>
+                    PERFORMANCE
+                    FORWARD.
+                </h2>
+
+                <p>
+                    We develop advanced lubrication solutions designed
+                    to improve efficiency, protection and performance.
+                    Our products are created for modern automotive and
+                    industrial applications.
+                </p>
+
+            </div>
+
+            <div class="about-box">
+                V
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Products -->
+
+    <section class="products-section" id="products">
+
+        <div class="section-title">
+            OUR PRODUCTS
+        </div>
+
+        <h2 class="section-heading">
+            LUBRICATION<br>
+            SOLUTIONS.
+        </h2>
+
+
+        <div class="products">
+
+            <div class="product-card">
+
+                <div class="product-number">
+                    01 / AUTOMOTIVE
+                </div>
+
+                <h3>
+                    ENGINE OIL
+                </h3>
+
+                <p>
+                    Advanced engine protection for passenger cars,
+                    commercial vehicles and high-performance engines.
+                </p>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-number">
+                    02 / TRANSMISSION
+                </div>
+
+                <h3>
+                    GEAR OIL
+                </h3>
+
+                <p>
+                    High-performance lubrication designed for
+                    transmissions, differentials and drivetrains.
+                </p>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <div class="product-number">
+                    03 / INDUSTRIAL
+                </div>
+
+                <h3>
+                    INDUSTRIAL OIL
+                </h3>
+
+                <p>
+                    Reliable lubrication solutions for demanding
+                    industrial machinery and equipment.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Technology -->
+
+    <section class="technology" id="technology">
+
+        <div class="section-title">
+            TECHNOLOGY
+        </div>
+
+        <h2 class="section-heading">
+            PRECISION<br>
+            IN EVERY DROP.
+        </h2>
+
+        <p>
+            Our lubrication technology combines carefully selected
+            base oils with advanced additive systems to deliver
+            outstanding protection, stability and performance under
+            demanding operating conditions.
+        </p>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+            CONTACT
+        </div>
+
+        <h2>
+            LET'S WORK<br>
+            TOGETHER.
+        </h2>
+
+        <p>
+            Discover the right lubrication solution for your business.
+        </p>
+
+        <a class="button" href="mailto:info@example.com">
+            CONTACT US
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div>
+            © 2026 VORTEX LUBRICANTS
+        </div>
+
+        <div>
+            ADVANCED LUBRICATION TECHNOLOGY
+        </div>
+
+    </footer>
+
+</body>
+</html>
