@@ -548,4 +548,173 @@
         padding: 35px;
     }
 
+}/* =========================
+   ENGINE OIL PRODUCT PAGE
+   ========================= */
+
+.product-detail-hero {
+    background: #0d0d0d;
+}
+
+.product-detail-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    padding: 120px 8%;
+    background: #f5f5f2;
+}
+
+.product-detail-intro h2 {
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1;
+    max-width: 650px;
+}
+
+.product-detail-intro > div:last-child {
+    max-width: 600px;
+}
+
+.product-detail-intro > div:last-child p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+
+/* Product Series */
+
+.oil-series {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 100px;
+    padding: 120px 8%;
+    background: #fff;
+}
+
+.series-title h2 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 0.95;
+}
+
+.series-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.oil-item {
+    display: grid;
+    grid-template-columns: 50px 1fr 100px;
+    gap: 30px;
+    align-items: start;
+
+    padding: 35px 0;
+    border-top: 1px solid #ccc;
+}
+
+.oil-item > span {
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+.oil-item .product-type {
+    margin-bottom: 12px;
+}
+
+.oil-item h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.oil-item p:last-child {
+    max-width: 500px;
+    color: #666;
+    line-height: 1.7;
+}
+
+.oil-item > strong {
+    font-size: 18px;
+    text-align: right;
+}
+
+
+/* Technical Information */
+
+.product-specs {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 100px;
+    padding: 120px 8%;
+    background: #111;
+    color: #fff;
+}
+
+.product-specs h2 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 0.95;
+}
+
+.spec-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 25px 0;
+    border-top: 1px solid #444;
+}
+
+.spec-row span {
+    color: #888;
+}
+
+.spec-row strong {
+    text-align: right;
+    font-weight: 500;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .product-detail-intro,
+    .oil-series,
+    .product-specs {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        padding: 80px 6%;
+    }
+
+    .product-detail-intro h2 {
+        font-size: 42px;
+    }
+
+    .oil-item {
+        grid-template-columns: 35px 1fr;
+        gap: 20px;
+    }
+
+    .oil-item > strong {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    .product-specs h2 {
+        font-size: 48px;
+    }
+
+    .spec-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .spec-row strong {
+        text-align: left;
+    }
+
 }
