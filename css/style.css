@@ -54,7 +54,51 @@
             letter-spacing: 1px;
             transition: 0.3s;
         }
+/* =========================
+   PRODUCTS DROPDOWN
+   ========================= */
 
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown > a {
+    display: block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 230px;
+    padding: 12px 0;
+    background: #111;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 0.25s ease;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 22px;
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+    background: #222;
+    color: #fff;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
         nav a:hover {
             color: #777;
         }
@@ -168,12 +212,82 @@
             background: #f5f5f5;
         }
 
-        .products {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-top: 60px;
-        }
+       .products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    margin-top: 60px;
+    background: #111;
+}
+
+.products .product-card {
+    position: relative;
+    background: #f5f5f5;
+    padding: 55px 45px;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+.products .product-card::after {
+    content: "RENO®";
+    position: absolute;
+    right: -15px;
+    bottom: -25px;
+    font-size: 90px;
+    font-weight: 800;
+    letter-spacing: -5px;
+    color: #e8e8e8;
+    pointer-events: none;
+    transition: 0.4s ease;
+}
+
+.products .product-card:hover {
+    background: #111;
+    color: #fff;
+}
+
+.products .product-card:hover::after {
+    color: #222;
+}
+
+.products .product-number {
+    margin-bottom: 0;
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.products .product-card h3 {
+    position: relative;
+    z-index: 2;
+    font-size: 32px;
+    letter-spacing: -1px;
+}
+
+.products .product-card h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.products .product-card p {
+    position: relative;
+    z-index: 2;
+    max-width: 430px;
+    color: #666;
+    line-height: 1.7;
+}
+
+.products .product-card:hover p {
+    color: #aaa;
+}
+
+.products .product-card:hover .product-number {
+    color: #777;
+}
 
         .product-card {
             background: white;
@@ -674,47 +788,221 @@
 
 .spec-row strong {
     text-align: right;
-    font-weight: 500;
 }
 
+/* =========================
+   TECHNOLOGY - NEW DESIGN
+   ========================= */
 
-/* Mobile */
+.technology {
+    padding: 140px 8%;
+    background: #111;
+    color: #fff;
+}
+
+.technology-header {
+    display: grid;
+    grid-template-columns: 0.35fr 1fr;
+    gap: 80px;
+    align-items: start;
+    padding-bottom: 100px;
+}
+
+.technology .section-title {
+    color: #888;
+}
+
+.technology-main-title {
+    font-size: clamp(55px, 9vw, 120px);
+    line-height: 0.88;
+    letter-spacing: -5px;
+    font-weight: 700;
+}
+
+.technology-main-title span {
+    color: #777;
+}
+
+.technology-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid #444;
+}
+
+.technology-intro,
+.technology-item {
+    padding: 35px 30px 35px 0;
+}
+
+.technology-intro {
+    padding-right: 60px;
+}
+
+.technology-intro p {
+    color: #aaa;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.technology-item {
+    border-left: 1px solid #444;
+    padding-left: 30px;
+}
+
+.technology-number {
+    display: block;
+    font-size: 13px;
+    color: #777;
+    letter-spacing: 2px;
+    margin-bottom: 45px;
+}
+
+.technology-item h3 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.technology-item p {
+    color: #999;
+    line-height: 1.7;
+    font-size: 14px;
+    max-width: 300px;
+}
+
+/* Technology Mobile */
 
 @media (max-width: 768px) {
 
-    .product-detail-intro,
-    .oil-series,
-    .product-specs {
+    .technology {
+        padding: 90px 6%;
+    }
+
+    .technology-header {
         grid-template-columns: 1fr;
-        gap: 60px;
-        padding: 80px 6%;
+        gap: 40px;
+        padding-bottom: 70px;
     }
 
-    .product-detail-intro h2 {
-        font-size: 42px;
+    .technology-main-title {
+        font-size: 58px;
+        letter-spacing: -3px;
     }
 
-    .oil-item {
-        grid-template-columns: 35px 1fr;
-        gap: 20px;
+    .technology-grid {
+        grid-template-columns: 1fr;
     }
 
-    .oil-item > strong {
-        grid-column: 2;
-        text-align: left;
+    .technology-intro,
+    .technology-item {
+        padding: 30px 0;
+        border-left: none;
     }
 
-    .product-specs h2 {
-        font-size: 48px;
+    .technology-item {
+        border-top: 1px solid #444;
     }
 
-    .spec-row {
-        flex-direction: column;
-        gap: 10px;
+    .technology-number {
+        margin-bottom: 25px;
+    }
+}
+/* =========================
+   PRODUCT MODEL PAGE
+   ========================= */
+
+.product-models {
+    padding: 80px 8% 120px;
+    background: #f5f5f5;
+}
+
+.model-card {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 50px;
+    padding: 70px 0;
+    border-top: 1px solid #ccc;
+}
+
+.model-card:last-child {
+    border-bottom: 1px solid #ccc;
+}
+
+.model-number {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.model-type {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.model-content h2 {
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: 0.9;
+    letter-spacing: -4px;
+    margin-bottom: 30px;
+}
+
+.model-description {
+    max-width: 700px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 60px;
+}
+
+.model-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    border-top: 1px solid #ccc;
+    padding-top: 30px;
+}
+
+.model-info h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.model-info p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666;
+    max-width: 280px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .product-models {
+        padding: 60px 6% 80px;
     }
 
-    .spec-row strong {
-        text-align: left;
+    .model-card {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 50px 0;
+    }
+
+    .model-content h2 {
+        font-size: 65px;
+    }
+
+    .model-description {
+        margin-bottom: 40px;
+    }
+
+    .model-info {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 
 }
