@@ -110,51 +110,63 @@
             padding: 160px 7% 80px;
             display: flex;
             align-items: center;
-            background:
-                linear-gradient(
-                    110deg,
-                    #f2f2f2 0%,
-                    #ffffff 55%,
-                    #dcdcdc 100%
-                );
+background:
+    linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.65) 0%,
+        rgba(0, 0, 0, 0.25) 50%,
+        rgba(0, 0, 0, 0.05) 100%
+    ),
+    url("../images/hero.jpg");
+    
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
         }
 
-        .hero-content {
-            max-width: 700px;
-        }
+.hero-content {
+    max-width: 750px;
+}
 
-        .hero-small {
-            font-size: 14px;
-            letter-spacing: 4px;
-            margin-bottom: 25px;
-            color: #666;
-        }
+.hero-small {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin-bottom: 28px;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
 
-        .hero h1 {
-            font-size: clamp(55px, 8vw, 110px);
-            line-height: 0.9;
-            letter-spacing: -4px;
-            margin-bottom: 35px;
-        }
+.hero h1 {
+    font-size: clamp(65px, 9vw, 125px);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -5px;
+    margin-bottom: 35px;
+    color: #ffffff;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.75);
+}
 
-        .hero p {
-            max-width: 550px;
-            color: #555;
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 40px;
-        }
+.hero p {
+    max-width: 600px;
+    color: #ffffff;
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
 
-        .button {
-            display: inline-block;
-            padding: 16px 35px;
-            background: #111;
-            color: white;
-            text-decoration: none;
-            font-size: 13px;
-            letter-spacing: 2px;
-            transition: 0.3s;
-        }
+.button {
+    display: inline-block;
+    padding: 17px 38px;
+    background: #ffffff;
+    color: #111111;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
 
         .button:hover {
             background: #444;
@@ -194,17 +206,78 @@
             font-size: 17px;
         }
 
-        .about-box {
-            height: 420px;
-            background: #111;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 70px;
-            font-weight: 800;
-            letter-spacing: 8px;
-        }
+.about-box {
+    height: 420px;
+    background:
+        linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(35, 35, 35, 0.88)),
+        radial-gradient(circle at 80% 20%, rgba(255, 180, 40, 0.25), transparent 45%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 55px;
+    box-sizing: border-box;
+}
+
+.about-box::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    right: -80px;
+    top: -80px;
+}
+
+.about-box::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(255, 180, 40, 0.35);
+    border-radius: 50%;
+    right: -35px;
+    top: -35px;
+}
+
+.about-box-number {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 35px;
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+}
+
+.about-box-text {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -1px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-box-line {
+    width: 80px;
+    height: 3px;
+    background: #e5a72f;
+    margin: 35px 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-box-small {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #cccccc;
+    position: relative;
+    z-index: 2;
+}
 
         /* ===== Products ===== */
 
@@ -1005,4 +1078,7 @@
         gap: 30px;
     }
 
-}
+}/* =========================
+   HERO BACKGROUND IMAGE
+   ========================= */
+
